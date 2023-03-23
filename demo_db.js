@@ -28,19 +28,8 @@ conn.connect(function(err) {
     }
   
     console.log('Connected to the MySQL server.');
-    console.log('Inserting Data.');
-           
-    // conn.query(
-    //     'INSERT INTO household SET hhid = ?, individ = ?, access_code = ?, username = ?, name = ?, email = ?, phone = ?, first_app_registration_on = ?, recent_app_registration_on = ?, is_pre_survey_completed = ?, created_on = ?',
-    //     [ hhid, individ, access_code, username, name, email, phone, first_reg, recent_reg, is_survey_completed, created_on ], 
-    //     function (err, results) {
-    //         if (err) {
-    //             return console.log('error:' + err.message);
-    //           }
-    //           console.log('Insertion successful');
-    //     }
-    // );
-
+    console.log('Inserting Data.');          
+    
     conn.query(
         `INSERT INTO household values(?,?,?,?,?,?,?,?,?,?,?,?) ON DUPLICATE KEY UPDATE 
         access_code = "${access_code}", username = "${username}", name = "${name}", email = "${email}", 
