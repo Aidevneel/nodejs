@@ -6,7 +6,6 @@ let config = {
     database: 'school'
 };
 
-
 let title = "node ".trim();
 let authorID =  500;
 let bol = true;
