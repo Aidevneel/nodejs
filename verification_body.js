@@ -12,7 +12,7 @@ app.post("/", (req, res) => {
 
   function varchar(a) {
     if (
-      ((typeof a === "string" && a.trim().length > 0) || (typeof a === "number" && !isNaN(a))) && !null ) {
+      ((typeof(a) === "string" && a.trim().length > 0) || (typeof(a) === "number" && !isNaN(a))) && !null ) {
       return true;
     } else {
       console.log(`data is empty or "${a}" is not varchar`);
@@ -21,7 +21,7 @@ app.post("/", (req, res) => {
   }
 
   function stri(a) {
-    if (typeof a === "string" && a.trim().length > 0 && !null) {
+    if (typeof(a) === "string" && a.trim().length > 0 && !null) {
       return true;
     } else {
       console.log(`"${a}" is not string`);
@@ -30,7 +30,7 @@ app.post("/", (req, res) => {
   }
 
   function numb(a) {
-    if (typeof a === "number" && !isNaN(a) && !null) {
+    if (typeof(a) === "number" && !isNaN(a) && !null) {
       return true;
     } else {
       console.log(`"${a}" is not a number`);
@@ -39,7 +39,7 @@ app.post("/", (req, res) => {
   }
 
   function bool(a) {
-    if (typeof a === "boolean" && !null) {
+    if (typeof(a) === "boolean" && !null) {
       return true;
     } else {
       console.log(`"${a}" is not a bollean value`);
@@ -49,8 +49,8 @@ app.post("/", (req, res) => {
 
   function dateFormate(a) {
     if (
-      typeof a === "string" &&
-      a.length > 0 &&
+      typeof(a) === "string" &&
+      a.trim().length > 0 &&
       moment(a, "YYYY-MM-DD", true).isValid() === true &&
       !null
     ) {

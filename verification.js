@@ -13,8 +13,8 @@ const data = JSON.parse(jsonn);
 
 function varchar(a) {
   if (
-    ((typeof a === "string" && a.trim().length > 0) ||
-      (typeof a === "number" && !isNaN(a))) &&
+    ((typeof(a) === "string" && a.trim().length > 0) ||
+      (typeof(a) === "number" && !isNaN(a))) &&
     !null
   ) {
     return true;
@@ -25,7 +25,7 @@ function varchar(a) {
 }
 
 function stri(a) {
-  if (typeof a === "string" && a.trim().length > 0 && !null) {
+  if (typeof(a) === "string" && a.trim().length > 0 && !null) {
     return true;
   } else {
     console.log(`"${a}" is not string`);
@@ -34,7 +34,7 @@ function stri(a) {
 }
 
 function numb(a) {
-  if (typeof a === "number" && !isNaN(a) && !null) {
+  if (typeof(a) === "number" && !isNaN(a) && !null) {
     return true;
   } else {
     console.log(`"${a}" is not a number`);
@@ -43,7 +43,7 @@ function numb(a) {
 }
 
 function bool(a) {
-  if (typeof a === "boolean" && !null) {
+  if (typeof(a) === "boolean" && !null) {
     return true;
   } else {
     console.log(`"${a}" is not a bollean value`);
@@ -53,7 +53,7 @@ function bool(a) {
 
 function dateFormate(a) {
   if (
-    typeof a === "string" &&
+    typeof(a) === "string" &&
     a.length > 0 &&
     moment(a, "YYYY-MM-DD", true).isValid() === true &&
     !null

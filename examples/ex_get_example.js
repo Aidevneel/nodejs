@@ -12,11 +12,11 @@ const contact = [
 const pathhtml = path.join(__dirname,"/html");
 app.use(express.static(pathhtml)); //built in middleware express.static
 
-// app.get('/',(req,res) => {
-//     res.write("<h1>Neel</h1>");
-//     res.write('hello from neel');
-//     res.send();
-// });
+app.get('/',(req,res) => {
+    // res.write("<h1>Neel</h1>");
+    // res.write('hello from neel');
+    res.redirect('https://www.google.com/');
+});
 
 app.get('/about',(req,res) => {
     res.send([1,2,3,4,5,6]);
