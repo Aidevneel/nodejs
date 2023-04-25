@@ -1,6 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-let moment = require("moment");
+let moment = require("moment");   //for  date formate verification
 let mysql = require("mysql");
 const app = express();
 const port = process.env.PORT || 3000;
